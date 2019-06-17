@@ -197,6 +197,7 @@ adminFunctionStore.sharePublicMessage = function(){
 function adminFactory(name, score=0) {
   // Put code here
   let user = userFactory(name, score);
+  Object.setPrototypeOf(user, adminFunctionStore)
   user.type = "Admin";
   return user;
 }
