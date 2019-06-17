@@ -33,3 +33,4 @@ The aim of the exercise is to get started with OOP in JavaScript
 ## Concepts & Resources ℹ️
 
 1. [Prototypes and Inheritance](https://javascript.info/prototypes)
+2. [Class](https://www.youtube.com/watch?v=2ZphE5HcQPQ)
