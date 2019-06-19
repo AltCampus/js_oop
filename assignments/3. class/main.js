@@ -27,12 +27,14 @@ class BookList {
         this.currentBook.readDate = Date.now();
         this.lastBook = this.currentBook;
         this.currentBook = this.nextBook;
-        this.allBooks.some(book => {
-            if(!(book.read || book === this.currentBook)) {
+
+        this.nextBook = null;
+        for(let book of this.allBooks) {
+            if(!book.read && book !== this.currentBook){
                 this.nextBook = book;
-            } 
-            return (!(book.read || book === this.currentBook));
-        });
+                break;
+            }
+        }
 
         return {last: this.lastBook, curr: this.currentBook, next: this.nextBook};
     }
@@ -49,18 +51,18 @@ class Book {
 }
 
 // Test cases
-let b1 = new Book("asd", "damn", "sdf", true, Date.now());
-let b2 = new Book("zxc", "damn", "asd", false, Date.now());
-let b3 = new Book("zxczx", "damn", "qwe", true, Date.now());
-let b4 = new Book("asd", "damn", "rwerwe", false, Date.now());
-let b5 = new Book("fgh", "damn", "vxcv", true, Date.now());
-let b6 = new Book("ccc", "damn", "ccc", false, Date.now());
-let b7 = new Book("xxx", "damn", "xxx", true, Date.now());
-let b8 = new Book("vvv", "damn", "vvv", true, Date.now());
-let b9 = new Book("ggg", "damn", "ggg", false, Date.now());
-let b10 = new Book("hhh", "damn", "hhh", false, Date.now());
-let b11 = new Book("jjj", "damn", "jjj", true, Date.now());
-let b12 = new Book("yyy", "damn", "yyy", false, Date.now());
+let b1 = new Book("book01", "damn", "sdf", true, Date.now());
+let b2 = new Book("book02", "damn", "asd", false);
+let b3 = new Book("book03", "damn", "qwe", true, Date.now());
+let b4 = new Book("book04", "damn", "rwerwe", false);
+let b5 = new Book("book05", "damn", "vxcv", true, Date.now());
+let b6 = new Book("book06", "damn", "ccc", false);
+let b7 = new Book("book07", "damn", "xxx", true, Date.now());
+let b8 = new Book("book08", "damn", "vvv", true, Date.now());
+let b9 = new Book("book09", "damn", "ggg", false);
+let b10 = new Book("book10", "amn", "hhh", false);
+let b11 = new Book("book11", "damn", "jjj", true, Date.now());
+let b12 = new Book("book12", "damn", "yyy", false);
 
 let b13 = new Book("yyy", "damn", "yyy", false, Date.now());
 
