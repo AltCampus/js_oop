@@ -22,6 +22,8 @@ class BookList {
     }
     finishCurrentBook() {
         this.currentBook.read = true;
+        ++this.NumOfread;
+        --this.NumOfNotread;
         this.currentBook.readDate = Date.now();
         this.lastBook = this.currentBook;
         this.currentBook = this.nextBook;
