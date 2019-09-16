@@ -6,8 +6,10 @@
 
 function makePerson(name, age) {
 	// add code here
-
-
+  const obj = {};
+  obj.name = name;
+  obj.age = age;
+  return obj;
 }
 
 var vicky = makePerson('Vicky', 24);
@@ -29,8 +31,12 @@ var vicky = makePerson('Vicky', 24);
 
 var personStore = {
 	// add code here
-
-
+  var personStore = {
+    // add code here
+    greet : function() {
+      console.log("hello");
+    }
+  };
 };
 
 // /********* Uncomment this line to test your work! *********/
@@ -42,9 +48,12 @@ var personStore = {
 
 function personFromPersonStore(name, age) {
 	// add code here
-
-
+  var personObj = Object.create(personStore);
+  personObj.name = name;
+  personObj.age = age;
+  return personObj;
 }
+
 
 var sandra = personFromPersonStore('Sandra', 26);
 
@@ -164,10 +173,16 @@ function userFactory(name, score) {
   return user;
 }
 
+
 var adminFunctionStore /* Put code here */ ;
 
 function adminFactory(name, score) {
   // Put code here
+  let admin = Object.create(adminFunctionStore);
+  admin.type = "Admin";
+  admin.name = name;
+  admin.score = score;
+  return admin;
 }
 
 /* Put code here for a method called sharePublicMessage*/
