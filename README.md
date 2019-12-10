@@ -2,7 +2,7 @@
 
 The aim of the exercise is to get started with OOP in JavaScript
 * [ ] Secret Life Of Boject
-* [ ] __proto__ v prototype
+* [ ] `__proto__` v `prototype`
 * [ ] Multiple Ways Of Creating Objects
 * [ ] Class
 * [ ] Prototypal Inheritance
